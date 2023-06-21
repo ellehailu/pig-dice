@@ -2,9 +2,9 @@ export function Game(playerOne, playerTwo){
     this.gamePlay = {}
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
-    // this.activePlayer = playerOne;
-    // this.scoreTotalPlayerOne = 0;
-    // this.scoreTotalPlayerTwo = 0;
+    this.activePlayer = playerOne;
+    this.scoreTotalPlayerOne = 0;
+    this.scoreTotalPlayerTwo = 0;
 }
 export function GamePlay(game){
     //player rolls
@@ -12,17 +12,18 @@ export function GamePlay(game){
     this.game = game;
 }
 
-// GamePlay.prototype.Roll = function(){
-//     let rollTotal = 0
-//     let diceRoll = Math.floor(Math.random() * 6) + 1;
-//         if (diceRoll === 1) {
-//             if (this.game.activePlayer === this.game.playerOne){
-//                 rollTotal = 0
-//                 this.game.scoreTotalPlayerOne = this.game.scoreTotalPlayerOne + rollTotal;
-//                 console.log("condition 1 works")
-//                 this.SwitchPlayer();
-//                 return this.game.scoreTotalPlayerOne;
-//             }
+GamePlay.prototype.Roll = function(){
+    let rollTotal = 0
+    let diceRoll = Math.floor(Math.random() * 6) + 1;
+    console.log(diceRoll);
+         if (diceRoll === 1) {
+            if (this.game.activePlayer === this.game.playerOne){
+                rollTotal = 0
+                this.game.scoreTotalPlayerOne = this.game.scoreTotalPlayerOne + rollTotal;
+                console.log("condition 1 works")
+//                this.SwitchPlayer();
+                return this.game.scoreTotalPlayerOne;
+            }
 //             else if (this.game.activePlayer === this.game.playerTwo){
 //                 rollTotal = 0
 //                 this.game.scoreTotalPlayerTwo = this.game.scoreTotalPlayerTwo + rollTotal;
@@ -49,7 +50,8 @@ export function GamePlay(game){
 //                 return this.game.scoreTotalPlayerTwo;
 //             }
 //         }   
-//     }
+    }
+}
 
 // GamePlay.prototype.Hold = function (){
 //     //needs to be responsive to the user clicking 'hold'
@@ -104,47 +106,3 @@ export function GamePlay(game){
 //     this.document.getElementById("hold").addEventListener("click", gamePlay.Hold);
 //     this.document.getElementById("roll").addEventListener("click", gamePlay.Roll);
 // })
-
-
-
-
-
-
-
-
-// function PigDice() {
-// this.dice = {}
-
-// }
-// function Players(playerOne, playerTwo){
-//     this.playerOne = playerOne;
-//     this.playerTwo = playerTwo;
-//     this.activePlayer = playerOne;
-    
-// }
-
-// Players.prototype.PlayerRoll() = function(){
-//     let scoreTotal = 0;
-//     let diceRoll = Math.floor(Math.random() * 7)
-//         if (diceRoll === 1) {
-//             scoreTotal = scoreTotal * 0;
-//             this.PlayerPass();
-//         }
-//         else if (diceRoll !== 1) {
-//             scoreTotal = scoreTotal + diceRoll;
-//         }
-//         return scoreTotal;
-//     }
-
-// Players.prototype.PlayerPass() = function(){
-
-//     if (activePlayer === playerOne && activePlayer.scoreTotal === 0 || activePlayer.hold) {
-//         activePlayer = playerTwo
-//     }
-//     else if (activePlayer === playerTwo && activePlayer.scoreTotal === 0 || activePlayer.hold){
-//         activePlayer = playerOne
-//     }
-
-//     return activePlayer ;
-// }
-
