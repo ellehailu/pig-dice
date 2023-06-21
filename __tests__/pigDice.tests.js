@@ -1,4 +1,3 @@
-import { directive } from "@babel/types";
 import { GamePlay } from "./../src/pigDice.js"
 import { Game } from "./../src/pigDice.js";
 
@@ -18,8 +17,13 @@ describe('create a beforeEach()', () => {
         expect(gamePlay.game).toEqual(game);
     });
     test('should test rolling', () => {
-        let randomNumber = gamePlay.Roll();
+        let randomNumber = gamePlay.Roll(); 
         expect(randomNumber).toBeLessThanOrEqual(6);
+    });
+    test('should switch player', () => {
+        let switchedPlayer = gamePlay.SwitchPlayer();
+        expect(switchedPlayer).toEqual("Elle");
+
     })
 });
 

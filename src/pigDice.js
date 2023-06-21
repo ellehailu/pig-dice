@@ -21,36 +21,35 @@ GamePlay.prototype.Roll = function(){
                 rollTotal = 0
                 this.game.scoreTotalPlayerOne = this.game.scoreTotalPlayerOne + rollTotal;
                 console.log("condition 1 works")
-//                this.SwitchPlayer();
+             this.SwitchPlayer();
                 return this.game.scoreTotalPlayerOne;
             }
-//             else if (this.game.activePlayer === this.game.playerTwo){
-//                 rollTotal = 0
-//                 this.game.scoreTotalPlayerTwo = this.game.scoreTotalPlayerTwo + rollTotal;
-//                 console.log("condition 2 works")
-//                 this.SwitchPlayer();
-//                 return this.game.scoreTotalPlayerTwo;
-//             }
+            else if (this.game.activePlayer === this.game.playerTwo){
+                rollTotal = 0
+                this.game.scoreTotalPlayerTwo = this.game.scoreTotalPlayerTwo + rollTotal;
+                console.log("condition 2 works")
+                this.SwitchPlayer();
+                return this.game.scoreTotalPlayerTwo;
+            }
             
-//         }
-//         else if (diceRoll !== 1) {
-//             if (this.game.activePlayer === this.game.playerOne){
-//                 rollTotal = diceRoll
-//                 this.scoreTotalPlayerOne = this.scoreTotalPlayerOne + rollTotal;
-//                 console.log("condition 3 works")
-//                 this.Win();
-//                 return this.game.scoreTotalPlayerOne;
-//             }
+        }
+        else if (diceRoll !== 1) {
+            if (this.game.activePlayer === this.game.playerOne){
+                rollTotal = diceRoll
+                this.scoreTotalPlayerOne = this.scoreTotalPlayerOne + rollTotal;
+                console.log("condition 3 works")
+                //this.Win();
+                return this.game.scoreTotalPlayerOne;
+            }
             
-//             else if (this.game.activePlayer === this.game.playerTwo){
-//                 rollTotal = diceRoll
-//                 this.game.scoreTotalPlayerTwo = this.game.scoreTotalPlayerTwo + rollTotal;
-//                 console.log("condition 4 works")
-//                 this.Win();
-//                 return this.game.scoreTotalPlayerTwo;
-//             }
-//         }   
-    }
+            else if (this.game.activePlayer === this.game.playerTwo){
+                rollTotal = diceRoll
+                this.game.scoreTotalPlayerTwo = this.game.scoreTotalPlayerTwo + rollTotal;
+                console.log("condition 4 works")
+                //this.Win();
+                return this.game.scoreTotalPlayerTwo;
+            }
+        }   
 }
 
 // GamePlay.prototype.Hold = function (){
@@ -58,15 +57,15 @@ GamePlay.prototype.Roll = function(){
 //     this.SwitchPlayer();
 // }
 
-// GamePlay.prototype.SwitchPlayer = function (){
-//     if(this.game.activePlayer === this.game.playerOne){
-//         this.game.activePlayer = this.game.playerTwo;
-//     }
-//     else if(this.game.activePlayer === this.game.playerTwo){
-//         this.game.activePlayer = this.game.playerOne;
-//     }
-//     return this.game.activePlayer;
-// }
+GamePlay.prototype.SwitchPlayer = function (){
+    if(this.game.activePlayer === this.game.playerOne){
+        this.game.activePlayer = this.game.playerTwo;
+    }
+    else if(this.game.activePlayer === this.game.playerTwo){
+        this.game.activePlayer = this.game.playerOne;
+    }
+    return this.game.activePlayer;
+}
 
 // GamePlay.prototype.Win = function (){
 //     if(this.game.scoreTotalPlayerOne >= 100 || this.game.scoreTotalPlayerTwo >= 100){
