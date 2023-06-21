@@ -6,11 +6,11 @@ export function Game(playerOne, playerTwo){
     // this.scoreTotalPlayerOne = 0;
     // this.scoreTotalPlayerTwo = 0;
 }
-// export function GamePlay(game){
-//     //player rolls
-//     //or player holds
-//     this.game = game;
-// }
+export function GamePlay(game){
+    //player rolls
+    //or player holds
+    this.game = game;
+}
 
 // GamePlay.prototype.Roll = function(){
 //     let rollTotal = 0
